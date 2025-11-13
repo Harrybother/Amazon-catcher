@@ -116,7 +116,7 @@ async def fetch_product(page, url):
             or soup.select_one("[data-hook='total-review-count']")
             or soup.select_one("#acrPopover .a-size-base")
         )
-        data["review数量"] = clean_text(rc_el.get_text(strip=True) if rc_el else None)
+        data["rating数量"] = clean_text(rc_el.get_text(strip=True) if rc_el else None)
 
         # ---------- 店铺名称 + 是否FBA ----------
         seller = "—"
@@ -281,7 +281,7 @@ def save_xlsx_with_images(rows, xlsx_path="firemaple_playwright.xlsx"):
     ws = wb.active
     ws.title = "Fire-Maple AU"
 
-    headers = ["产品图片","链接","亚马逊ASIN","价格","类目&排名","评分","店铺名称","是否FBA","review数量","review情况"]
+    headers = ["产品图片","链接","亚马逊ASIN","价格","类目&排名","评分","店铺名称","是否FBA","rating数量","review情况"]
     ws.append(headers)
 
     # 设置列宽，行高（首列放缩略图）
@@ -307,7 +307,7 @@ def save_xlsx_with_images(rows, xlsx_path="firemaple_playwright.xlsx"):
             row.get("评分",""),
             row.get("店铺名称",""),
             row.get("是否FBA",""),
-            row.get("review数量",""),
+            row.get("rating数量",""),
             row.get("review情况",""),
         ])
 
@@ -382,7 +382,7 @@ async def main():
                 "评分",
                 "店铺名称",
                 "是否FBA",
-                "review数量",
+                "rating数量",
                 "review情况",
             ],
         )
