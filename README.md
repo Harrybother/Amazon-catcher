@@ -115,15 +115,6 @@ python firemaple_playwright.py
 
 ---
 
-## 🧹 店铺名称清洗规则
-
-为确保输出干净整洁：
-- 仅保留 “Sold by” 之前的部分；
-- 自动去重（例如 `Conglin AU Conglin AU` → `Conglin AU`）；
-- 无法识别的情况输出 “—”。
-
----
-
 ## ⚠️ 常见问题
 
 | 问题 | 原因 | 解决办法 |
@@ -152,5 +143,5 @@ python firemaple_playwright.py
 
 ---
 
-作者：呼延
+作者：虎哥
 版本：v1.3 (2025.11)
